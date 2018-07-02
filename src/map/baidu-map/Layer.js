@@ -236,10 +236,18 @@ class Layer extends BaseLayer{
     }
 
     show() {
+        if (!this.isHide) {
+          return
+        }
+        this.isHide = false
         this.map.addOverlay(this.canvasLayer);
     }
 
     hide() {
+        if (this.isHide) {
+          return
+        }
+        this.isHide = true
         this.map.removeOverlay(this.canvasLayer);
     }
 

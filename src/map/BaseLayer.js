@@ -326,7 +326,9 @@ class BaseLayer {
     }
 
     animatorMoveendEvent() {
-        if (this.isEnabledTime() && this.animator) {
+        var animationOptions = this.options.animation;
+        if (this.isEnabledTime() && this.animator && !this.isHide) {
+            this.steps.step = animationOptions.stepsRange.start;
             this.animator.start();
         }
     }

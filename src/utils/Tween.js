@@ -404,6 +404,7 @@ TWEEN.Tween = function (object) {
                     // even if the `update()` method was called way past the duration of the tween
                     _chainedTweens[i].start(_startTime + _duration);
                 }
+                _isPlaying = false;
 
                 return false;
 
