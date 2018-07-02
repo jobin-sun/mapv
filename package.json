@@ -1,5 +1,5 @@
 {
-  "name": "mapv",
+  "name": "mapv-ex",
   "version": "2.0.24",
   "description": "a library of geography visualization",
   "main": "build/mapv.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huiyan-fe/mapv.git"
+    "url": "git+https://github.com/jobin-sun/mapv.git"
   },
-  "author": "huiyan-fe",
+  "author": "jobin-sun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huiyan-fe/mapv/issues"
+    "url": "https://github.com/jobin-sun/mapv/issues"
   },
-  "homepage": "https://github.com/huiyan-fe/mapv#readme",
+  "homepage": "https://github.com/jobin-sun/mapv#readme",
   "devDependencies": {
     "babel-helpers": "^6.24.1",
     "babel-preset-env": "^1.6.1",
