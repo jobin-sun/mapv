@@ -4,7 +4,7 @@
 	(factory((global.mapv = global.mapv || {}),global.maptalks));
 }(this, (function (exports,maptalks) { 'use strict';
 
-var version = "2.0.24";
+var version = "2.0.25";
 
 /**
  * @author kyle / http://nikai.us/
@@ -2250,7 +2250,6 @@ function getCurvePoints(points, options) {
  * @param Point 终点
  */
 function getCurveByTwoPoints(obj1, obj2, count) {
-  console.info(obj1, obj2);
   if (!obj1 || !obj2) {
     return null;
   }
@@ -4120,7 +4119,8 @@ if (typeof window !== 'undefined') {
 
 function animate(time) {
     requestAnimationFrame(animate);
-    TWEEN.update(time);
+    // console.log(TWEEN.getAll().length, TWEEN.getAll())
+    TWEEN.update(time, true);
 }
 
 var BaseLayer = function () {
@@ -4406,7 +4406,9 @@ var BaseLayer = function () {
                 this.steps = { step: animationOptions.stepsRange.start };
                 self.animator = new TWEEN.Tween(this.steps).onUpdate(function () {
                     self._canvasUpdate(this.step);
-                }).repeat(Infinity);
+                })
+                // .repeat(Infinity);
+                .repeat(animationOptions.repeat === undefined ? Infinity : animationOptions.repeat);
 
                 this.addAnimatorEvent();
 
@@ -4819,7 +4821,7 @@ var Layer$1 = function (_BaseLayer) {
                 if (this.context == '2d') {
                     context.save();
                     context.globalCompositeOperation = 'destination-out';
-                    context.fillStyle = 'rgba(0, 0, 0, .1)';
+                    context.fillStyle = 'rgba(0, 0, 0, ' + (animationOptions.trailsEx || 0.1) + ')';
                     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
                     context.restore();
                 }
