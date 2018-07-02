@@ -19,7 +19,6 @@ function getCurvePoints (points, options) {
  * @param Point 终点
  */
 function getCurveByTwoPoints (obj1, obj2, count) {
-  console.info(obj1, obj2)
   if (!obj1 || !obj2) {
     return null;
   }

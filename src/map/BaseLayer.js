@@ -24,7 +24,8 @@ if (typeof window !== 'undefined') {
 
 function animate(time) {
     requestAnimationFrame(animate);
-    TWEEN.update(time);
+    // console.log(TWEEN.getAll().length, TWEEN.getAll())
+    TWEEN.update(time, true);
 }
 
 
@@ -299,7 +300,8 @@ class BaseLayer {
                 .onUpdate(function () {
                     self._canvasUpdate(this.step);
                 })
-                .repeat(Infinity);
+                // .repeat(Infinity);
+                .repeat(animationOptions.repeat === undefined? Infinity: animationOptions.repeat);
 
             this.addAnimatorEvent();
 

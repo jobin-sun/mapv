@@ -130,7 +130,7 @@ class Layer extends BaseLayer{
             if (this.context == '2d') {
                 context.save();
                 context.globalCompositeOperation = 'destination-out';
-                context.fillStyle = 'rgba(0, 0, 0, .1)';
+                context.fillStyle = 'rgba(0, 0, 0, '+(animationOptions.trailsEx || 0.1)+')';
                 context.fillRect(0, 0, context.canvas.width, context.canvas.height);
                 context.restore();
             }
